@@ -32,7 +32,7 @@ data = {
 
 for i in range(len(reviews)):
     author = reviews[i].find('div', 'business-review-view__author-name')
-    text = reviews[i].find('span', 'business-review-view__body-text')
+    text = reviews[i].find('span', 'spoiler-view__text-container')
     date = reviews[i].find('span', 'business-review-view__date')
     rating = reviews[i].find('meta', itemprop='ratingValue')
     data['author'].append(author.text)
@@ -56,6 +56,7 @@ for i in range(len(reviews)):
     sheet['D' + str(i + 1)] = data['text'][i]
 
 workbook.save("Отзывы/" + Name.text + " reviews.xlsx")
+
 
 
 print("\n\nВСЕ СДЕЛАНО\n\n")
