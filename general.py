@@ -4,7 +4,7 @@ import json
 import openpyxl
 
 
-with open('input.json', 'r', encoding='utf-8') as file:
+with open('data/input.json', 'r', encoding='utf-8') as file:
     input_data = json.load(file)
 
 
@@ -41,7 +41,7 @@ for i in range(len(ul_li)):
         data['href'].append('https://yandex.ru' + EDX.get('href'))
 
 
-with open('output.json', 'w', encoding='utf-8') as file:
+with open('data/output.json', 'w', encoding='utf-8') as file:
     json.dump(data, file, indent=4, ensure_ascii=False)
 
 
